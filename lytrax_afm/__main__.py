@@ -1,64 +1,34 @@
-import re
-from ._utils import get_random_int
 from ._validation import validate_afm
-from ._generation import generate_afm, generate_valid_afm
+from ._generation import generate_valid_afm, generate_invalid_afm
 
 def main():
-    """Read the Real Python article feed"""
+    gen_valid()
+    print()
+    gen_invalid()
 
-    subject = '1123444567777'
-    subject = '1234567'
-    re_test = r"(.)\1+"
-    matches = re.findall(re_test, subject)
-    print(len(matches))
+def gen_valid():
+    print("Demo: Generate valid numbers\n")
 
-    finditer = re.finditer(re_test, subject)
-    for x in finditer:
-        print(x.group())
-        print(type(x.group()))
+    report("(default)", generate_valid_afm())
+    report("pre99", generate_valid_afm(pre99=True))
+    report("legal_entity", generate_valid_afm(legal_entity=True))
+    report("individual", generate_valid_afm(individual=True))
+    report("repeatTolerance:0", generate_valid_afm(repeat_tolerance=0))
 
-    print("Testing!!!")
-    afm = '130558790'
-    if not re.match(r"^\d+$", afm):
-        print("invalid")
-    else:
-        print("valid")
+def gen_invalid():
+    print("Demo: Generate invalid numbers\n")
 
-    print(validate_afm(afm))
+    report("(default)", generate_invalid_afm())
+    report("pre99", generate_invalid_afm(pre99=True))
+    report("legal_entity", generate_invalid_afm(legal_entity=True))
+    report("individual", generate_invalid_afm(individual=True))
+    report("repeatTolerance:0", generate_invalid_afm(repeat_tolerance=0))
 
-    generate_afm()
+def report(label, number):
+    print("%s %s %s" % (label, number, validator(validate_afm(number))))
 
-    # print("00000000" == "0" * 9)
-
-    print("1234567"[:5])
-    rng = range(10)
-    print(rng)
-
-    testBool = 1
-    if not testBool:
-        print('not')
-    else:
-        print('is not not')
-
-    for index in range(1, 10):
-        print("afm %d: %s" % (index, generate_valid_afm(valid = False)))
-
-    #print(get_random_int(0, 9, 5))
-    # Read URL of the Real Python feed from config file
-    # cfg = ConfigParser()
-    # cfg.read_string(resources.read_text("reader", "config.txt"))
-    # url = cfg.get("feed", "url")
-
-    # # If an article ID is given, show the article
-    # if len(sys.argv) > 1:
-    #     article = feed.get_article(url, sys.argv[1])
-    #     viewer.show(article)
-
-    # # If no ID is given, show a list of all articles
-    # else:
-    #     site = feed.get_site(url)
-    #     titles = feed.get_titles(url)
-    #     viewer.show_list(site, titles)
+def validator(valid):
+    return '(valid)' if valid else '(invalid)'
 
 if __name__ == "__main__":
     main()
