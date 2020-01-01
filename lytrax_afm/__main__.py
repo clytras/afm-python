@@ -1,11 +1,23 @@
 import re
-from utils import get_random_int
-from _validation import validate_afm
+from ._utils import get_random_int
+from ._validation import validate_afm
+from ._generation import generate_afm, generate_valid_afm
 
 def main():
     """Read the Real Python article feed"""
-    print("Testing!!!")
 
+    subject = '1123444567777'
+    subject = '1234567'
+    re_test = r"(.)\1+"
+    matches = re.findall(re_test, subject)
+    print(len(matches))
+
+    finditer = re.finditer(re_test, subject)
+    for x in finditer:
+        print(x.group())
+        print(type(x.group()))
+
+    print("Testing!!!")
     afm = '130558790'
     if not re.match(r"^\d+$", afm):
         print("invalid")
@@ -14,12 +26,22 @@ def main():
 
     print(validate_afm(afm))
 
+    generate_afm()
+
     # print("00000000" == "0" * 9)
 
     print("1234567"[:5])
+    rng = range(10)
+    print(rng)
 
-    for index in range(len(afm)):
-        print("idx %i, c %c" % (index, afm[index]))
+    testBool = 1
+    if not testBool:
+        print('not')
+    else:
+        print('is not not')
+
+    for index in range(1, 10):
+        print("afm %d: %s" % (index, generate_valid_afm(valid = False)))
 
     #print(get_random_int(0, 9, 5))
     # Read URL of the Real Python feed from config file
