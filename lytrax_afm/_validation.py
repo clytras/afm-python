@@ -2,6 +2,20 @@ import re
 
 
 def validate_afm(afm: str, extended_result: bool = False):
+    """Checks if the passed AFM is a valid AFM number
+
+    Parameters
+    ----------
+    afm : str
+        A string to be check if it's a valid AFM
+    extended_result : bool, optional
+        Return extended object result if True, single boolean otherwise (default is False)
+    
+    Returns
+    -------
+    str or dict
+        A boolean result or a dictionary indicating the validation of the number
+    """
     if len(afm) != 9:
         return {
             'valid': False,
