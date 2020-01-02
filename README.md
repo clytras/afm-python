@@ -12,7 +12,7 @@ https://lytrax.io/blog/projects/greek-tin-validator-generator
 ## Installation
 
 ```
-pip install lytrax_afm
+pip install lytrax-afm
 ```
 
 ## Usage
