@@ -13,7 +13,7 @@ def gen_valid():
     report("pre99", generate_valid_afm(pre99=True))
     report("legal_entity", generate_valid_afm(legal_entity=True))
     report("individual", generate_valid_afm(individual=True))
-    report("repeatTolerance:0", generate_valid_afm(repeat_tolerance=0))
+    report("repeat_tolerance:0", generate_valid_afm(repeat_tolerance=0))
 
 def gen_invalid():
     print("Demo: Generate invalid numbers\n")
@@ -22,7 +22,7 @@ def gen_invalid():
     report("pre99", generate_invalid_afm(pre99=True))
     report("legal_entity", generate_invalid_afm(legal_entity=True))
     report("individual", generate_invalid_afm(individual=True))
-    report("repeatTolerance:0", generate_invalid_afm(repeat_tolerance=0))
+    report("repeat_tolerance:0", generate_invalid_afm(repeat_tolerance=0))
 
 def report(label, number):
     print("%s %s %s" % (label, number, validator(validate_afm(number))))
