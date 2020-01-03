@@ -2,6 +2,8 @@
 
 [![Linux Build Status](https://img.shields.io/travis/clytras/afm-python.svg?style=flat)](https://travis-ci.org/clytras/afm-python.svg?branch=master) [![PyPi](https://img.shields.io/pypi/v/lytrax-afm)](https://pypi.org/project/lytrax-afm) 
 
+![Logo](https://github.com/clytras/afm-python/raw/master/resources/LytraxAFM_logo.png)
+
 Validate and generate Greek TIN (*Tax Identification Number*) / AFM (*Αριθμός Φορολογικού Μητρώου*). Generation function can create valid or invalid numbers including parameters for old format, individuals, legal entities and repet tolerance digits control.
 
 ## Online demo and presentation
