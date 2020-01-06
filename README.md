@@ -1,6 +1,6 @@
 # Greek TIN/AFM Validator and Generator
 
-[![Linux Build Status](https://img.shields.io/travis/clytras/afm-python.svg?style=flat)](https://travis-ci.org/clytras/afm-python.svg?branch=master) [![PyPi](https://img.shields.io/pypi/v/lytrax-afm)](https://pypi.org/project/lytrax-afm) 
+[![Linux Build Status](https://img.shields.io/travis/clytras/afm-python.svg?style=flat)](https://travis-ci.org/clytras/afm-python?branch=master) [![PyPi](https://img.shields.io/pypi/v/lytrax-afm)](https://pypi.org/project/lytrax-afm) 
 
 ![Logo](https://github.com/clytras/afm-python/raw/master/resources/LytraxAFM_logo.png)
 

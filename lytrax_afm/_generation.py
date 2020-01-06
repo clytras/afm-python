@@ -58,7 +58,7 @@ def generate_afm(
         last_gen_digit = digit
     
     validator = sum % 11
-    d9_valid = 0 if validator >= 10 else validator
+    d9_valid = validator % 10
     d9 = d9_valid if valid else get_random_int(0, 9, d9_valid)
 
     return body + str(d9)
