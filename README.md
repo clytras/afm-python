@@ -110,6 +110,12 @@ git clone https://github.com/clytras/afm-python.git && cd afm-python
 python -m unittest discover -s './test' -v
 ```
 
+Run Demo:
+
+```
+python -m lytrax_afm
+```
+
 ## Changelog
 
 See [CHANGELOG](https://github.com/clytras/afm-python/blob/master/CHANGELOG.md)
